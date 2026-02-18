@@ -6,7 +6,7 @@ import com.parthi.logistic.customer.model.Customer;
 import com.parthi.logistic.customer.service.CustomerService;
 
 import jakarta.validation.Valid;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,20 +19,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public class CustomerController {
 
-    CustomerService customerService = new CustomerService();
+    @Autowired
+    CustomerService customerService;
 
-/**
- * This API shows all the customer present in the database
- * @return Returns a response entity ok, if found and the list with customer details
- */
-    @GetMapping("/getallcustomer")
-    public ResponseEntity<?> getCustomer() {
-        List<Customer> customers = customerService.getCustomers();
-        if (customers == null || customers.isEmpty()) {
-            return ResponseEntity.ok("No customers found");
-        }
-        return ResponseEntity.ok(customers);
-    }
+
 
 /**
  * This API shows the details of a customer whose phone numer is entered
@@ -57,14 +47,6 @@ public class CustomerController {
         }
         return ResponseEntity.ok(customerService.addCustomer(customer));
     }
-
-    @PostMapping("/update/customer/{customerNumber}")
-    public ResponseEntity<?> updateCustomerDetail(@PathVariable String customerNumber, @Valid @RequestBody Customer customer) {
-        return ResponseEntity.ok(customerService.updateCustomer(customerNumber,customer));
-    }
-    
-
-
 
 }
 

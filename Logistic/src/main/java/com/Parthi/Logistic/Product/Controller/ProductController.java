@@ -1,4 +1,4 @@
-package com.parthi.logistic.product.controller;
+package com.parthi.logistic.product.Controller;
 
 import java.util.Collections;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.parthi.logistic.product.Service.ProductService;
 import com.parthi.logistic.product.model.Product;
-import com.parthi.logistic.product.service.ProductService;
 
 @RestController
 public class ProductController {
