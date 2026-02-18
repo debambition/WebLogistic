@@ -1,4 +1,4 @@
-package com.parthi.logistic.product.service;
+package com.parthi.logistic.product.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.parthi.logistic.product.repository.ProductRepo;
+import com.parthi.logistic.product.Repository.ProductRepo;
 import com.parthi.logistic.product.model.Product;
 
 @Service

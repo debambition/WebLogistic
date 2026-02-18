@@ -1,4 +1,4 @@
-package com.parthi.logistic.product.repository;
+package com.parthi.logistic.product.Repository;
 
 import java.util.Optional;
 

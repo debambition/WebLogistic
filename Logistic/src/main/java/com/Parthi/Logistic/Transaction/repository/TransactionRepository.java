@@ -1,5 +1,11 @@
-package com.parthi.logistic.Transaction.repository;
+package com.parthi.logistic.transaction.repository;
 
-public class TransactionRepository {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
+import com.parthi.logistic.transaction.model.Transaction;
+
+@Repository
+public interface TransactionRepository extends CrudRepository<Transaction, Integer> {
+    
 }
